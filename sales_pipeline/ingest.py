@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import csv
 import json
 import re
 import time
@@ -10,6 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+from sales_pipeline.storage import ROOT, atomic_json, file_hash
 
 API_URL = "https://data.wprdc.org/api/3/action/package_show?id=real-estate-sales"
 CONSOLIDATED_ID = "5bbe6c55-bce6-4edb-9d04-68edeb6bf7b1"
@@ -27,7 +30,7 @@ def request_bytes(url: str) -> tuple[bytes, dict]:
                 raise
             if attempt == 2:
                 raise
-            time.sleep(2 ** attempt)
+            time.sleep(2**attempt)
     raise AssertionError("unreachable")
 
 
@@ -52,17 +55,28 @@ def discover(metadata: dict) -> list[dict]:
         if resource["id"] == CONSOLIDATED_ID or match:
             if resource.get("format", "").upper() != "CSV":
                 raise ValueError(f"Expected CSV resource: {resource['name']}")
-            resources.append({
-                "id": resource["id"], "name": resource["name"],
-                "url": resource["url"], "year": int(match[1]) if match else None,
-                "kind": "annual" if match else "consolidated",
-                "last_modified": resource.get("last_modified"),
-            })
+            resources.append(
+                {
+                    "id": resource["id"],
+                    "name": resource["name"],
+                    "url": resource["url"],
+                    "year": int(match[1]) if match else None,
+                    "kind": "annual" if match else "consolidated",
+                    "last_modified": resource.get("last_modified"),
+                }
+            )
     annual_years = sorted(r["year"] for r in resources if r["kind"] == "annual")
     if sum(r["kind"] == "consolidated" for r in resources) != 1 or not annual_years:
         raise ValueError("Missing consolidated or annual resources")
     if annual_years != list(range(2012, max(annual_years) + 1)):
         raise ValueError(f"Annual resources are missing or repeated: {annual_years}")
+    with (ROOT / "config" / "resources.csv").open(newline="") as handle:
+        baseline = list(csv.DictReader(handle))
+    actual = {resource["id"]: resource for resource in resources}
+    for expected in baseline:
+        resource = actual.get(expected["id"])
+        if not resource or resource["name"] != expected["name"]:
+            raise ValueError(f"Expected resource missing or renamed: {expected['name']}")
     return sorted(resources, key=lambda r: (r["kind"] != "consolidated", r["year"] or 0))
 
 
@@ -74,7 +88,8 @@ def fetch_snapshot(data_dir: Path) -> Path:
     metadata_path, metadata_hash = save_raw(raw_dir, "package-metadata", metadata_bytes, "json")
     manifest = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "metadata_path": metadata_path, "metadata_sha256": metadata_hash,
+        "metadata_path": metadata_path,
+        "metadata_sha256": metadata_hash,
         "resources": [],
     }
     for resource in resources:
@@ -83,12 +98,17 @@ def fetch_snapshot(data_dir: Path) -> Path:
         if not content or content.lstrip().startswith((b"<!DOCTYPE", b"<html")):
             raise ValueError(f"Empty or HTML response for {resource['name']}")
         path, digest = save_raw(raw_dir, resource["id"], content, "csv")
-        manifest["resources"].append({
-            **resource, "path": path, "sha256": digest, "bytes": len(content),
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "http_etag": headers.get("ETag"),
-            "http_last_modified": headers.get("Last-Modified"),
-        })
+        manifest["resources"].append(
+            {
+                **resource,
+                "path": path,
+                "sha256": digest,
+                "bytes": len(content),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "http_etag": headers.get("ETag"),
+                "http_last_modified": headers.get("Last-Modified"),
+            }
+        )
         print(f"  {len(content):,} bytes; SHA256 {digest[:12]}", flush=True)
     # Recheck metadata to catch a publisher refresh during this multi-file fetch.
     after_bytes, _ = request_bytes(API_URL)
@@ -102,9 +122,7 @@ def fetch_snapshot(data_dir: Path) -> Path:
     path.write_text(json.dumps(manifest, indent=2) + "\n")
     # This pointer selects a complete raw snapshot, not a published model.
     latest = manifests / "latest.json"
-    temporary = latest.with_suffix(".tmp")
-    temporary.write_text(json.dumps(manifest, indent=2) + "\n")
-    temporary.replace(latest)
+    atomic_json(latest, manifest)
     return path
 
 
@@ -116,12 +134,11 @@ def verify_snapshot(manifest_path: Path, data_dir: Path) -> dict:
         path = (data_dir / relative_path).resolve()
         if not path.is_relative_to(data_dir.resolve()):
             raise ValueError("Manifest path escapes the data directory")
-        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        if file_hash(path) != expected:
             raise ValueError(f"Raw checksum mismatch: {relative_path}")
     expected_resources = discover(json.loads((data_dir / manifest["metadata_path"]).read_bytes()))
     observed_resources = [
-        {key: resource[key] for key in expected_resources[0]}
-        for resource in manifest["resources"]
+        {key: resource[key] for key in expected_resources[0]} for resource in manifest["resources"]
     ]
     if observed_resources != expected_resources:
         raise ValueError("Manifest resource inventory does not match the saved CKAN metadata")

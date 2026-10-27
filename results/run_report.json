@@ -1,27 +1,75 @@
 {
-  "snapshot_fetched_at": "2026-10-27T15:02:25.006077+00:00",
-  "output_sha256": "86351460b912e56e1d2de7406f9fcc0641490ed7ab46001cdcdfa850e8707e55",
+  "snapshot_fetched_at": "2026-10-27T15:26:12.218179+00:00",
+  "output_sha256": "7507709ffad9f0455258a87ef6fd1ea8cc53ea404d7675deda7d8f954434fc27",
+  "input_signature": "c3854097b2d0be3702debb8633c530e0d5a396c717bfa46c24becd1c02dff543",
+  "transformation_hashes": {
+    "config/municipalities.csv": "e847876ec677a8874485bf39fccb39a2969b2242f7dc4cc3cac2549b53338c0c",
+    "config/resources.csv": "3a499dd2ef44335ba780585fe66f73227c90ea8e96f10278727d02a07a018ee9",
+    "config/sale_codes.csv": "4db6e1591fba7af224701e01d826f7e54b9d42cf37661f83229a8925b6c43cc4",
+    "requirements.lock": "3e02f41626a6e268a82619f99f97e984a548fc6d893753d5fc9dd5ea0f56f64f",
+    "sales_pipeline/__init__.py": "1648c34073b75718cdbb306b711d843844ae3da9f3dcff172683376bf2b6ea00",
+    "sales_pipeline/__main__.py": "640ef927aad9b163c57c0304675c866e2fdcbd3fd75a7e58339530ae32b230a6",
+    "sales_pipeline/ingest.py": "eee617bc1135cb3bcc19c86f9117f4da84c85b4fdeec59f480cf2e88a0216947",
+    "sales_pipeline/model.py": "3e383d1cbf00beb18479d4a4fc230fb2e99e5108a9f1cded5f87e262c47df6ab",
+    "sales_pipeline/snapshot.py": "3ee161cdc8621c83afb69b05856c722724d1a64186473bb1c64839421a6a279e",
+    "sales_pipeline/storage.py": "d87c383f760bd17e60fcd437bdaa4d09c982c0e9c323f27b217593611f776c57",
+    "sql/01_normalize.sql": "6a704228dfc4b115e0a90e63494fce2754282c5b09fd9870dcee46afbe8a04d8",
+    "sql/02_reconcile.sql": "de7c56b54dc046b9f64c4a06902f4fe7b4f522f65e13e2eb35d4a584bd881fd2",
+    "sql/03_municipality_year.sql": "154a65c94192350c08437309aa6e059b5511d3ba72793412c7834bdd0ba6aa9d",
+    "sql/04_quality_checks.sql": "c79164330f68aecd3bc9f7a3ea1b8c79674e86f7b79e04bdea5605c483ebe256"
+  },
+  "runtime": {
+    "python": "3.11.13",
+    "duckdb": "1.5.6"
+  },
+  "output_hashes": {
+    "municipality_year.csv": "7507709ffad9f0455258a87ef6fd1ea8cc53ea404d7675deda7d8f954434fc27",
+    "quality_checks.csv": "f242c204b7d56dc6ccd423aee93837060f61800d9466c42f05181383913f2808",
+    "repeated_deed_examples.csv": "f9827d2b146940ed7c7ca7540f274e646f4b746b5de77392cb8d4b50427e4434",
+    "review_records.csv": "8ed8f0a0cf3f31758925c49ef4908a8f6aa3292c3f132b370a4d485c3b6e91e0",
+    "sale_code_profile.csv": "abd8788a4d9a6e133db9aa3d0f51b56987b4dd1ca11db3f0d22d6b4bfa07d1e2",
+    "source_reconciliation.csv": "c350b5e56b456bee5777b24e8dc9e7908a2f5c36c5405d7ed4f61a8b06e810d1",
+    "manifest.json": "97f8d07e2c3b366e0d4984b863717daaae3a593c145ee82d9e40935b16742721"
+  },
   "totals": {
     "transfers": 506471,
     "municipalities": 130,
-    "eligible_market_sales": 100188,
-    "unresolved_conflicts": 5,
+    "standard_valid_sales": 100173,
+    "conflicting_values": 82,
+    "identity_review_transfers": 750,
+    "potential_date_conflicts": 68,
     "incomplete_deed_keys": 600,
-    "recording_before_sale": 730,
+    "recording_before_sale": 727,
     "first_sale_date": "2012-01-01",
     "last_sale_date": "2026-10-22"
   },
   "checks": [
     {
-      "check_name": "annual_file_matches_sale_year",
+      "check_name": "annual_sale_year",
       "violations": 0
     },
     {
-      "check_name": "clean_transfer_identity_unique",
+      "check_name": "canonical_municipality_has_one_name",
       "violations": 0
     },
     {
-      "check_name": "consolidated_identity_unambiguous",
+      "check_name": "clean_identity_unique",
+      "violations": 0
+    },
+    {
+      "check_name": "composition_adds_up",
+      "violations": 0
+    },
+    {
+      "check_name": "conflicting_values_masked",
+      "violations": 0
+    },
+    {
+      "check_name": "crosswalk_rollup_labels",
+      "violations": 0
+    },
+    {
+      "check_name": "date_parsing",
       "violations": 0
     },
     {
@@ -33,19 +81,19 @@
       "violations": 0
     },
     {
-      "check_name": "market_sale_definition",
+      "check_name": "multi_parcel_excluded",
       "violations": 0
     },
     {
-      "check_name": "multi_parcel_excluded_from_market",
-      "violations": 0
-    },
-    {
-      "check_name": "municipality_code_has_one_name",
+      "check_name": "municipality_reference",
       "violations": 0
     },
     {
       "check_name": "nonnegative_prices",
+      "violations": 0
+    },
+    {
+      "check_name": "observed_sale_code_pairs",
       "violations": 0
     },
     {
@@ -57,11 +105,19 @@
       "violations": 0
     },
     {
-      "check_name": "output_market_reconciliation",
+      "check_name": "output_nonempty",
       "violations": 0
     },
     {
-      "check_name": "output_nonempty",
+      "check_name": "output_standard_valid_reconciliation",
+      "violations": 0
+    },
+    {
+      "check_name": "price_format_and_precision",
+      "violations": 0
+    },
+    {
+      "check_name": "reference_keys_unique",
       "violations": 0
     },
     {
@@ -69,23 +125,19 @@
       "violations": 0
     },
     {
-      "check_name": "reviewed_sale_code_descriptions",
+      "check_name": "sale_date_range",
       "violations": 0
     },
     {
-      "check_name": "sale_date_in_snapshot_range",
+      "check_name": "source_rows_preserved",
       "violations": 0
     },
     {
-      "check_name": "typed_dates_and_price",
+      "check_name": "standard_valid_definition",
       "violations": 0
     },
     {
-      "check_name": "unresolved_values_never_used",
-      "violations": 0
-    },
-    {
-      "check_name": "ward_labels_match_city_rollup",
+      "check_name": "uncertain_identity_never_priced",
       "violations": 0
     }
   ],
@@ -100,7 +152,7 @@
       "path": "raw/5bbe6c55-bce6-4edb-9d04-68edeb6bf7b1/6e2c2d9d0b39d8e58ec84453ab9ac278d42e8c3ee1c5bd219d862b55ce1b7245.csv",
       "sha256": "6e2c2d9d0b39d8e58ec84453ab9ac278d42e8c3ee1c5bd219d862b55ce1b7245",
       "bytes": 85920447,
-      "fetched_at": "2026-10-27T15:02:31.645356+00:00",
+      "fetched_at": "2026-10-27T15:26:18.467790+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 397885
@@ -115,7 +167,7 @@
       "path": "raw/910b5e61-dee4-4a59-bee5-ad3660a8ab89/406f01e0747fb43f002d9bf9e39a032383baa60d1f58202e3fcdb22f9fde5179.csv",
       "sha256": "406f01e0747fb43f002d9bf9e39a032383baa60d1f58202e3fcdb22f9fde5179",
       "bytes": 7147814,
-      "fetched_at": "2026-10-27T15:02:32.664336+00:00",
+      "fetched_at": "2026-10-27T15:26:19.458525+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 33651
@@ -130,7 +182,7 @@
       "path": "raw/2915af73-a321-4cd0-afc0-908d3fb9fb59/2add48288bb7cc4d8775bab304ab72be9efcef9691231af38afeda1b0dcac9b8.csv",
       "sha256": "2add48288bb7cc4d8775bab304ab72be9efcef9691231af38afeda1b0dcac9b8",
       "bytes": 7175774,
-      "fetched_at": "2026-10-27T15:02:34.184594+00:00",
+      "fetched_at": "2026-10-27T15:26:20.290081+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 34095
@@ -145,7 +197,7 @@
       "path": "raw/69495c44-ea74-4f52-ad23-7282edb725e7/8967b1ecab052af6b94fd970d5b7c49550355bcc7fb31bb804f7a14fc24e5a1b.csv",
       "sha256": "8967b1ecab052af6b94fd970d5b7c49550355bcc7fb31bb804f7a14fc24e5a1b",
       "bytes": 7191850,
-      "fetched_at": "2026-10-27T15:02:37.125023+00:00",
+      "fetched_at": "2026-10-27T15:26:21.512054+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 33670
@@ -160,7 +212,7 @@
       "path": "raw/1eda5ff4-c442-49f2-b771-4f711346a6b9/d5036705a8230e39771da491a1c323f10465a46cb9759b2d91d3fb570247bb8c.csv",
       "sha256": "d5036705a8230e39771da491a1c323f10465a46cb9759b2d91d3fb570247bb8c",
       "bytes": 7401561,
-      "fetched_at": "2026-10-27T15:02:42.527482+00:00",
+      "fetched_at": "2026-10-27T15:26:22.535016+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 34686
@@ -175,7 +227,7 @@
       "path": "raw/aea14708-8c21-4292-a8d4-25a5a27dc0d3/cacbeb5515e93f2af799ae858eed44cfe2e891afdbd367125221f18654a1da16.csv",
       "sha256": "cacbeb5515e93f2af799ae858eed44cfe2e891afdbd367125221f18654a1da16",
       "bytes": 7683193,
-      "fetched_at": "2026-10-27T15:02:43.758760+00:00",
+      "fetched_at": "2026-10-27T15:26:23.900885+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 36011
@@ -190,7 +242,7 @@
       "path": "raw/abc4a494-4f6e-4b69-85d3-ff9756ec0c39/552b978c10af724725b2985d6b5816e8f2c459ec4a0d397940c85c59e5756104.csv",
       "sha256": "552b978c10af724725b2985d6b5816e8f2c459ec4a0d397940c85c59e5756104",
       "bytes": 7534644,
-      "fetched_at": "2026-10-27T15:02:44.796187+00:00",
+      "fetched_at": "2026-10-27T15:26:24.877122+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 35281
@@ -205,7 +257,7 @@
       "path": "raw/7211106c-62d2-4de9-a239-b045983a665e/4958a2f094b042ef9c0250e793420ae0704219bc692b9f189bfc090db06e26a8.csv",
       "sha256": "4958a2f094b042ef9c0250e793420ae0704219bc692b9f189bfc090db06e26a8",
       "bytes": 7788432,
-      "fetched_at": "2026-10-27T15:02:46.010620+00:00",
+      "fetched_at": "2026-10-27T15:26:25.899703+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 36488
@@ -220,7 +272,7 @@
       "path": "raw/bd9ae6de-09ed-47e5-8ebf-2a46a5a3a5b5/5a000e555f08789a9197e554b343d4503ebd48ad01b244556772efeaaf46614c.csv",
       "sha256": "5a000e555f08789a9197e554b343d4503ebd48ad01b244556772efeaaf46614c",
       "bytes": 7656140,
-      "fetched_at": "2026-10-27T15:02:47.049363+00:00",
+      "fetched_at": "2026-10-27T15:26:26.818145+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 35671
@@ -235,7 +287,7 @@
       "path": "raw/4531f69a-b368-4e46-8b93-a308faaab46b/73aa239a8791fc6094a0b750173a5f433048c0df6e6e43a8118e759a7c26b709.csv",
       "sha256": "73aa239a8791fc6094a0b750173a5f433048c0df6e6e43a8118e759a7c26b709",
       "bytes": 7653252,
-      "fetched_at": "2026-10-27T15:02:48.397397+00:00",
+      "fetched_at": "2026-10-27T15:26:27.926717+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 35348
@@ -250,7 +302,7 @@
       "path": "raw/a55a2710-4703-45b4-804e-5c550ca42fd7/bb4a0b57463a7a65488afeb4f182448553a071b3a9d0f17a231f5fa059bd3ddf.csv",
       "sha256": "bb4a0b57463a7a65488afeb4f182448553a071b3a9d0f17a231f5fa059bd3ddf",
       "bytes": 8728745,
-      "fetched_at": "2026-10-27T15:02:49.676590+00:00",
+      "fetched_at": "2026-10-27T15:26:29.071485+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 40234
@@ -265,7 +317,7 @@
       "path": "raw/4d9ab793-07d2-44e8-9530-e7258fd30018/1306ac0757dd47fcb4c2784910e69223b75f973854775378a624243717979397.csv",
       "sha256": "1306ac0757dd47fcb4c2784910e69223b75f973854775378a624243717979397",
       "bytes": 7481554,
-      "fetched_at": "2026-10-27T15:02:50.683865+00:00",
+      "fetched_at": "2026-10-27T15:26:29.989747+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 34826
@@ -280,7 +332,7 @@
       "path": "raw/9fbceb58-5bc1-4ad6-b93f-8147a9b34c5c/df2f7ffca105a6ff4dc359653e37359f7ec39dbadfff7a81fe87c74d8f1895c8.csv",
       "sha256": "df2f7ffca105a6ff4dc359653e37359f7ec39dbadfff7a81fe87c74d8f1895c8",
       "bytes": 6606127,
-      "fetched_at": "2026-10-27T15:02:51.726074+00:00",
+      "fetched_at": "2026-10-27T15:26:31.051750+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 30861
@@ -295,7 +347,7 @@
       "path": "raw/9366b400-e4a2-403f-ab14-64cf708ec2f7/c598b874e3ad731062c32d66c46255fba2d62859b7303ed37f02e86ab94c8e6a.csv",
       "sha256": "c598b874e3ad731062c32d66c46255fba2d62859b7303ed37f02e86ab94c8e6a",
       "bytes": 6658773,
-      "fetched_at": "2026-10-27T15:02:52.816030+00:00",
+      "fetched_at": "2026-10-27T15:26:32.046811+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 31115
@@ -310,7 +362,7 @@
       "path": "raw/57b84145-f9eb-493b-a78f-9bc803413d99/a1522d630d92d92b6e436eb2ce27fb5e82e22325b88675048209715ce5cab47e.csv",
       "sha256": "a1522d630d92d92b6e436eb2ce27fb5e82e22325b88675048209715ce5cab47e",
       "bytes": 6769144,
-      "fetched_at": "2026-10-27T15:02:54.901405+00:00",
+      "fetched_at": "2026-10-27T15:26:32.732024+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 31551
@@ -325,7 +377,7 @@
       "path": "raw/0bd13902-f2ee-4340-b7c8-c54ebd0f6bd0/40646daef08c864e7ea8b9d695bfa59abd5d0986b887a865a1f20ad95d61d658.csv",
       "sha256": "40646daef08c864e7ea8b9d695bfa59abd5d0986b887a865a1f20ad95d61d658",
       "bytes": 4915645,
-      "fetched_at": "2026-10-27T15:02:55.516385+00:00",
+      "fetched_at": "2026-10-27T15:26:33.397948+00:00",
       "http_etag": null,
       "http_last_modified": null,
       "row_count": 23066
@@ -338,8 +390,9 @@
       "in_both": 33641,
       "annual_only": 10,
       "consolidated_only": 0,
-      "competing_versions": 0,
-      "unresolved_conflicts": 0
+      "conflicting_values": 0,
+      "potential_date_conflicts": 0,
+      "incomplete_deed_keys": 53
     },
     {
       "sale_year": 2013,
@@ -347,8 +400,9 @@
       "in_both": 34085,
       "annual_only": 10,
       "consolidated_only": 0,
-      "competing_versions": 0,
-      "unresolved_conflicts": 0
+      "conflicting_values": 0,
+      "potential_date_conflicts": 1,
+      "incomplete_deed_keys": 184
     },
     {
       "sale_year": 2014,
@@ -356,8 +410,9 @@
       "in_both": 33625,
       "annual_only": 21,
       "consolidated_only": 0,
-      "competing_versions": 24,
-      "unresolved_conflicts": 0
+      "conflicting_values": 24,
+      "potential_date_conflicts": 20,
+      "incomplete_deed_keys": 44
     },
     {
       "sale_year": 2015,
@@ -365,8 +420,9 @@
       "in_both": 34622,
       "annual_only": 19,
       "consolidated_only": 0,
-      "competing_versions": 45,
-      "unresolved_conflicts": 0
+      "conflicting_values": 44,
+      "potential_date_conflicts": 15,
+      "incomplete_deed_keys": 60
     },
     {
       "sale_year": 2016,
@@ -374,8 +430,9 @@
       "in_both": 35996,
       "annual_only": 13,
       "consolidated_only": 0,
-      "competing_versions": 2,
-      "unresolved_conflicts": 0
+      "conflicting_values": 2,
+      "potential_date_conflicts": 0,
+      "incomplete_deed_keys": 16
     },
     {
       "sale_year": 2017,
@@ -383,8 +440,9 @@
       "in_both": 35264,
       "annual_only": 15,
       "consolidated_only": 0,
-      "competing_versions": 2,
-      "unresolved_conflicts": 0
+      "conflicting_values": 2,
+      "potential_date_conflicts": 2,
+      "incomplete_deed_keys": 13
     },
     {
       "sale_year": 2018,
@@ -392,8 +450,9 @@
       "in_both": 36454,
       "annual_only": 34,
       "consolidated_only": 0,
-      "competing_versions": 0,
-      "unresolved_conflicts": 0
+      "conflicting_values": 0,
+      "potential_date_conflicts": 5,
+      "incomplete_deed_keys": 39
     },
     {
       "sale_year": 2019,
@@ -401,8 +460,9 @@
       "in_both": 35625,
       "annual_only": 45,
       "consolidated_only": 0,
-      "competing_versions": 1,
-      "unresolved_conflicts": 0
+      "conflicting_values": 1,
+      "potential_date_conflicts": 4,
+      "incomplete_deed_keys": 41
     },
     {
       "sale_year": 2020,
@@ -410,8 +470,9 @@
       "in_both": 35271,
       "annual_only": 75,
       "consolidated_only": 0,
-      "competing_versions": 2,
-      "unresolved_conflicts": 0
+      "conflicting_values": 2,
+      "potential_date_conflicts": 1,
+      "incomplete_deed_keys": 63
     },
     {
       "sale_year": 2021,
@@ -419,8 +480,9 @@
       "in_both": 40138,
       "annual_only": 95,
       "consolidated_only": 0,
-      "competing_versions": 1,
-      "unresolved_conflicts": 0
+      "conflicting_values": 1,
+      "potential_date_conflicts": 11,
+      "incomplete_deed_keys": 72
     },
     {
       "sale_year": 2022,
@@ -428,8 +490,9 @@
       "in_both": 33259,
       "annual_only": 1566,
       "consolidated_only": 0,
-      "competing_versions": 1,
-      "unresolved_conflicts": 1
+      "conflicting_values": 1,
+      "potential_date_conflicts": 2,
+      "incomplete_deed_keys": 9
     },
     {
       "sale_year": 2023,
@@ -437,8 +500,9 @@
       "in_both": 4653,
       "annual_only": 26206,
       "consolidated_only": 0,
-      "competing_versions": 2,
-      "unresolved_conflicts": 1
+      "conflicting_values": 2,
+      "potential_date_conflicts": 1,
+      "incomplete_deed_keys": 1
     },
     {
       "sale_year": 2024,
@@ -446,8 +510,9 @@
       "in_both": 4740,
       "annual_only": 26373,
       "consolidated_only": 0,
-      "competing_versions": 2,
-      "unresolved_conflicts": 2
+      "conflicting_values": 2,
+      "potential_date_conflicts": 4,
+      "incomplete_deed_keys": 5
     },
     {
       "sale_year": 2025,
@@ -455,8 +520,9 @@
       "in_both": 509,
       "annual_only": 31042,
       "consolidated_only": 0,
-      "competing_versions": 0,
-      "unresolved_conflicts": 0
+      "conflicting_values": 0,
+      "potential_date_conflicts": 1,
+      "incomplete_deed_keys": 0
     },
     {
       "sale_year": 2026,
@@ -464,10 +530,10 @@
       "in_both": 3,
       "annual_only": 23062,
       "consolidated_only": 0,
-      "competing_versions": 1,
-      "unresolved_conflicts": 1
+      "conflicting_values": 1,
+      "potential_date_conflicts": 1,
+      "incomplete_deed_keys": 0
     }
   ],
-  "definition": "Eligible: SALECODE='0', SALEDESC='VALID SALE', positive price, resolved identity.",
-  "minimum_market_sample": 30
+  "definition": "Standard-valid: code 0 / VALID SALE, positive price, agreed analytical values, complete deed key, no date conflict."
 }

@@ -1,0 +1,176 @@
+source_code,source_name,municipality_code,municipality,mapping_basis
+101,1st Ward  - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+102,2nd Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+103,3rd Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+104,4th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+105,5th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+106,6th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+107,7th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+108,8th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+109,9th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+110,10th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+111,11th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+112,12th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+113,13th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+114,14th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+115,15th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+116,16th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+117,17th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+118,18th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+119,19th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+120,20th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+121,21st Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+122,22nd Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+123,23rd Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+124,24th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+125,25th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+126,26th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+127,27th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+128,28th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+129,29th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+130,30th Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+131,31st Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+132,32nd Ward - PITTSBURGH,100,Pittsburgh,observed ward label; project city rollup
+201,1st Ward - CLAIRTON,200,Clairton,observed ward label; project city rollup
+202,2nd Ward - CLAIRTON,200,Clairton,observed ward label; project city rollup
+301,1st Ward  - DUQUESNE,300,Duquesne,observed ward label; project city rollup
+302,2nd Ward  - DUQUESNE,300,Duquesne,observed ward label; project city rollup
+303,3rd Ward  - DUQUESNE,300,Duquesne,observed ward label; project city rollup
+401,1st Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+402,2nd Ward - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+403,3rd Ward - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+404,4th Ward - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+405,5th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+406,6th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+407,7th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+408,8th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+409,9th Ward  -  McKEESPORT,400,McKeesport,observed ward label; project city rollup
+410,10th Ward -  McKEESPORT,400,McKeesport,observed ward label; project city rollup
+411,11th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+412,12th Ward  - McKEESPORT,400,McKeesport,observed ward label; project city rollup
+801,Aspinwall,801,Aspinwall,source municipality unchanged
+802,Avalon,802,Avalon,source municipality unchanged
+803,Bellevue,803,Bellevue,source municipality unchanged
+804,Ben Avon,804,Ben Avon,source municipality unchanged
+805,Ben Avon Heights,805,Ben Avon Heights,source municipality unchanged
+806,Blawnox,806,Blawnox,source municipality unchanged
+807,Brackenridge,807,Brackenridge,source municipality unchanged
+808,Braddock,808,Braddock,source municipality unchanged
+809,Bradford Woods,809,Bradford Woods,source municipality unchanged
+810,Brentwood,810,Brentwood,source municipality unchanged
+811,Bridgeville,811,Bridgeville,source municipality unchanged
+812,Carnegie,812,Carnegie,source municipality unchanged
+813,Castle Shannon,813,Castle Shannon,source municipality unchanged
+814,Chalfant,814,Chalfant,source municipality unchanged
+815,Cheswick,815,Cheswick,source municipality unchanged
+816,Churchill,816,Churchill,source municipality unchanged
+817,Coraopolis,817,Coraopolis,source municipality unchanged
+818,Crafton,818,Crafton,source municipality unchanged
+819,Dormont,819,Dormont,source municipality unchanged
+820,Dravosburg,820,Dravosburg,source municipality unchanged
+821,East McKeesport,821,East McKeesport,source municipality unchanged
+822,East Pittsburgh,822,East Pittsburgh,source municipality unchanged
+823,Edgewood,823,Edgewood,source municipality unchanged
+824,Edgeworth,824,Edgeworth,source municipality unchanged
+825,Elizabeth Boro,825,Elizabeth Boro,source municipality unchanged
+826,Emsworth,826,Emsworth,source municipality unchanged
+827,Etna,827,Etna,source municipality unchanged
+828,Forest Hills,828,Forest Hills,source municipality unchanged
+829,Glassport,829,Glassport,source municipality unchanged
+830,Glenfield,830,Glenfield,source municipality unchanged
+831,Greentree,831,Greentree,source municipality unchanged
+832,Haysville,832,Haysville,source municipality unchanged
+833,Heidelberg,833,Heidelberg,source municipality unchanged
+834,Homestead,834,Homestead,source municipality unchanged
+835,Ingram,835,Ingram,source municipality unchanged
+836,Leetsdale,836,Leetsdale,source municipality unchanged
+837,Liberty,837,Liberty,source municipality unchanged
+838,Millvale,838,Millvale,source municipality unchanged
+839,Mt. Oliver,839,Mt. Oliver,source municipality unchanged
+840,Munhall,840,Munhall,source municipality unchanged
+841,McDonald,841,McDonald,source municipality unchanged
+842,McKees Rocks,842,McKees Rocks,source municipality unchanged
+843,North Braddock,843,North Braddock,source municipality unchanged
+844,Oakdale,844,Oakdale,source municipality unchanged
+845,Oakmont,845,Oakmont,source municipality unchanged
+846,Glen Osborne,846,Glen Osborne,source municipality unchanged
+847,Pitcairn,847,Pitcairn,source municipality unchanged
+848,Port Vue,848,Port Vue,source municipality unchanged
+849,Rankin,849,Rankin,source municipality unchanged
+850,Rosslyn Farms,850,Rosslyn Farms,source municipality unchanged
+851,Sewickley,851,Sewickley,source municipality unchanged
+852,Sharpsburg,852,Sharpsburg,source municipality unchanged
+853,Springdale Boro,853,Springdale Boro,source municipality unchanged
+854,Swissvale,854,Swissvale,source municipality unchanged
+855,Tarentum,855,Tarentum,source municipality unchanged
+856,Thornburg,856,Thornburg,source municipality unchanged
+857,Trafford,857,Trafford,source municipality unchanged
+858,Turtle Creek,858,Turtle Creek,source municipality unchanged
+859,Verona,859,Verona,source municipality unchanged
+860,Versailles,860,Versailles,source municipality unchanged
+861,Wall,861,Wall,source municipality unchanged
+862,West Elizabeth,862,West Elizabeth,source municipality unchanged
+863,West Homestead,863,West Homestead,source municipality unchanged
+864,West View,864,West View,source municipality unchanged
+865,Whitaker,865,Whitaker,source municipality unchanged
+866,Wilkinsburg,866,Wilkinsburg,source municipality unchanged
+867,Wilmerding,867,Wilmerding,source municipality unchanged
+868,Fox Chapel,868,Fox Chapel,source municipality unchanged
+869,Sewickley Heights,869,Sewickley Heights,source municipality unchanged
+870,West Mifflin,870,West Mifflin,source municipality unchanged
+871,Pennsbury Village,871,Pennsbury Village,source municipality unchanged
+872,Braddock Hills,872,Braddock Hills,source municipality unchanged
+873,Pleasant Hills,873,Pleasant Hills,source municipality unchanged
+874,Whitehall,874,Whitehall,source municipality unchanged
+875,White Oak,875,White Oak,source municipality unchanged
+876,Bethel Park,876,Bethel Park,source municipality unchanged
+877,Baldwin Boro,877,Baldwin Boro,source municipality unchanged
+878,Jefferson Hills,878,Jefferson Hills,source municipality unchanged
+879,Monroeville,879,Monroeville,source municipality unchanged
+880,Plum,880,Plum,source municipality unchanged
+881,Lincoln,881,Lincoln,source municipality unchanged
+882,Sewickley Hills,882,Sewickley Hills,source municipality unchanged
+883,Bell Acres,883,Bell Acres,source municipality unchanged
+884,Franklin Park,884,Franklin Park,source municipality unchanged
+901,Aleppo,901,Aleppo,source municipality unchanged
+902,Baldwin Twp,902,Baldwin Twp,source municipality unchanged
+905,Collier,905,Collier,source municipality unchanged
+906,Crescent,906,Crescent,source municipality unchanged
+907,East Deer,907,East Deer,source municipality unchanged
+908,Elizabeth Twp,908,Elizabeth Twp,source municipality unchanged
+909,Fawn,909,Fawn,source municipality unchanged
+910,Findlay,910,Findlay,source municipality unchanged
+911,Forward,911,Forward,source municipality unchanged
+913,Frazer,913,Frazer,source municipality unchanged
+914,Hampton,914,Hampton,source municipality unchanged
+915,Harmar,915,Harmar,source municipality unchanged
+916,Harrison,916,Harrison,source municipality unchanged
+917,Indiana,917,Indiana,source municipality unchanged
+919,Kennedy,919,Kennedy,source municipality unchanged
+920,Kilbuck,920,Kilbuck,source municipality unchanged
+921,Leet,921,Leet,source municipality unchanged
+923,Marshall,923,Marshall,source municipality unchanged
+925,Moon,925,Moon,source municipality unchanged
+926,Mt.Lebanon,926,Mt.Lebanon,source municipality unchanged
+927,McCandless,927,McCandless,source municipality unchanged
+928,Neville,928,Neville,source municipality unchanged
+929,North Fayette,929,North Fayette,source municipality unchanged
+930,North Versailles,930,North Versailles,source municipality unchanged
+931,O''Hara,931,O''Hara,source municipality unchanged
+932,Ohio,932,Ohio,source municipality unchanged
+934,Penn Hills,934,Penn Hills,source municipality unchanged
+935,Pine,935,Pine,source municipality unchanged
+937,Reserve,937,Reserve,source municipality unchanged
+938,Richland,938,Richland,source municipality unchanged
+939,Robinson,939,Robinson,source municipality unchanged
+940,Ross,940,Ross,source municipality unchanged
+941,Scott,941,Scott,source municipality unchanged
+944,Shaler,944,Shaler,source municipality unchanged
+945,South Park,945,South Park,source municipality unchanged
+946,South Fayette,946,South Fayette,source municipality unchanged
+947,South Versailles,947,South Versailles,source municipality unchanged
+948,Springdale Twp,948,Springdale Twp,source municipality unchanged
+949,Stowe,949,Stowe,source municipality unchanged
+950,Upper St. Clair,950,Upper St. Clair,source municipality unchanged
+952,West Deer,952,West Deer,source municipality unchanged
+953,Wilkins,953,Wilkins,source municipality unchanged

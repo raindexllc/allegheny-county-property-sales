@@ -1,31 +1,44 @@
-# `municipality_year` output dictionary
+# `municipality_year`: one municipality and sale year
 
-Grain: one municipality and sale year with at least one reconciled candidate transfer identity. The CSV and DuckDB table contain the same ordered analytical rows.
+Only combinations with recorded candidate identities occur. Absent groups do not receive invented zero prices. City rollups use project-assigned IDs; source geography remains available in `normalized` and the checked crosswalk.
 
 | Field | Meaning |
 |---|---|
-| `municipality_code` | Source municipality code, with city rollups 100=Pittsburgh, 200=Clairton, 300=Duquesne, 400=McKeesport |
-| `municipality` | Municipality name after the four city rollups |
-| `sale_year` | Calendar year of `SALEDATE` |
-| `recorded_transfers` | Distinct candidate parcel-transfer identities, including unresolved identities |
-| `transfers_with_price` | Resolved identities with a non-null price; denominator of the naive price median |
-| `missing_price_transfers` | Resolved identities with a missing price |
-| `zero_price_transfers` | Resolved identities with an explicit zero price |
-| `love_affection_transfers` | Resolved identities with code 3 |
-| `multi_parcel_transfers` | Resolved identities with code H |
-| `unresolved_conflicts` | Identities whose annual-only versions disagree; price and sale classification withheld |
-| `incomplete_deed_keys` | Identities missing deed book, deed page or instrument type |
-| `eligible_market_sales` | Resolved identities with standard-valid code 0 and positive price |
-| `median_recorded_price` | Median of all non-null resolved prices, including zero and non-market records; nominal dollars |
-| `median_market_price` | Median price within the eligible subset; null if none qualify |
-| `first_sale_date` | Earliest sale date in the municipality-year group |
-| `last_sale_date` | Latest sale date in the municipality-year group |
-| `eligible_share` | Eligible sales divided by all recorded transfer identities; fraction from 0 to 1 |
-| `median_difference` | Eligible median minus naive median, in dollars |
-| `median_difference_pct` | Eligible median / naive median − 1; a fraction, null for a zero denominator |
-| `meets_sample_threshold` | At least 30 eligible sales; default display rule, not a statistical confidence claim |
-| `latest_observed_year` | This row's year equals the maximum observed sale year in the snapshot; not a guarantee of full-year coverage |
+| `municipality_code`, `municipality` | Canonical project municipality, including four city rollups |
+| `sale_year` | Calendar year of SALEDATE |
+| `recorded_transfers` | Candidate parcel-transfer identities, including records under review |
+| `priced_transfers` | Otherwise usable identities with a non-null price; includes zero prices |
+| `standard_valid_sales` | Usable identity, code 0 / VALID SALE and positive price |
+| `family_transfers` | Usable priced records with code 3 |
+| `multi_parcel_transfers` | Usable priced records with code H |
+| `other_transfers` | Other usable priced records, including code-0 records with nonpositive price |
+| `missing_price_transfers` | Usable identity with missing price |
+| `identity_review_transfers` | Disputed analytical values, incomplete deed keys or potential date conflicts |
+| `zero_price_transfers` | Priced transfers with explicit zero; overlaps category counts |
+| `conflicting_values` | More than one analytical version under the candidate identity |
+| `potential_date_conflicts` | Same parcel/book/page/instrument appears on multiple sale dates |
+| `incomplete_deed_keys` | Missing book, page or instrument; these diagnostic counts can overlap |
+| `median_all_transfer_price` | Median of priced transfers, including zero and non-market classifications |
+| `median_standard_valid_price` | Median within the standard-valid subset; null if none qualify |
+| `median_family_price` | Median within the family-transfer category |
+| `median_multi_parcel_price` | Median within the multi-parcel category; may reflect entire deed prices |
+| `median_other_price` | Median within the other-transfer category |
+| `first_sale_date`, `last_sale_date` | Observed date bounds for the municipality/year |
+| `standard_valid_share` | Standard-valid count / recorded identities; fraction 0–1 |
+| `median_gap_dollars` | Standard-valid median − all-priced-transfer median |
+| `median_gap_pct` | Standard-valid median / all-priced-transfer median − 1; null if denominator zero |
+| `is_partial_year` | Sale year is the snapshot's current calendar year or later; completed years can still receive corrections |
 
-Reconciliation diagnostics in `source_reconciliation.csv` describe presence in source families, competing versions and unresolved counts by sale year. They are audit outputs supporting the single analytical table.
+**Six disjoint categories:** standard-valid + family + multi-parcel + other + missing price + identity review = recorded transfers. `priced_transfers` equals the first four categories. Diagnostic flags such as zero prices or incomplete keys are not extra additive categories.
 
-`run_report.json` contains snapshot retrieval time, source inventory and hashes, quality counts, coverage dates, anomaly counts and the analytical CSV checksum. `manifest.json` points to the exact locally landed raw resources used for the submission.
+Supporting audit files:
+
+- `source_reconciliation.csv`: presence in both/annual-only/consolidated-only source families, plus identity concerns by year.
+- `review_records.csv`: every source variant for identities under review or with descriptive differences, including lineage and flags.
+- `repeated_deed_examples.csv`: largest observed repeated-price deed group for each municipality/year, limited to usable H records. This is an illustration, not an estimate of total deed activity.
+- `sale_code_profile.csv`: selected, resolved classifications; disputed values are null rather than an arbitrary winner.
+- `quality_checks.csv`: violation counts; any nonzero count blocks model publication.
+- `manifest.json`: exact locally retained source bytes and resource metadata.
+- `run_report.json`: totals, transformations, source inventory and checksums for every data/audit output above.
+
+Never average municipality medians to estimate a county median. Recompute from the underlying usable transfer rows.

@@ -1,48 +1,48 @@
-sale_code,sale_description
-0,VALID SALE
-0X,OTHER
-1,SHERIFF SALE
-13,EXEMPT BUYER OR SELLER
-14,TIME ON MARKET (INSUFF/EXCESS)
-16,BUILDING NOT YET ASSESSED
-19,INCLUDES PERSONAL PROPERTY
-2,CITY TREASURER SALE
-21,OTHER
-27,NO ASSESSED VALUATION
-28,OTHER
-29,OTHER
-3,LOVE AND AFFECTION SALE
-32,COURT ORDERED SALE
-33,SALE OF PREVIOUS FORECLOSURE - INVALID
-34,SHORT SALE - INVALID
-35,CORPORATION TRANSFER
-36,QUIT CLAIM
-37,ESTATE SALE
-4,OTHER
-5,OTHER
-50,OTHER
-6,CHANGED AFTER SALE
-8,OTHER
-9,OTHER INVALID SALES INDICATED
-99,CORRECTIVE DEED / DUPLICATE SALE
-AA,SALE NOT ANALYZED
-BK,BANK/FINANCIAL INSTITUTION
-DT,DATE OF TRANSFER (RECORD YR <> SALE YR)
-GV,GOVERNMENT SALE
-H,MULTI-PARCEL SALE
-N,NOT APPLICABLE
-ND,OTHER
-PA,PREFERENTIAL ASMT
-PV,CLEAN AND GREEN  VALID PREFERENTIAL
-PX,OTHER
-S,OTHER
-U,OTHER
-UR,OTHER
-UX,OTHER
-V,OTHER
-VB,OTHER
-VH,OTHER
-X,OTHER
-XX,OTHER
-YY,OTHER
-Z,OTHER
+sale_code,sale_description,analysis_group,standard_valid
+0,VALID SALE,Standard-valid sales,true
+0X,OTHER,Other transfers,false
+1,SHERIFF SALE,Other transfers,false
+13,EXEMPT BUYER OR SELLER,Other transfers,false
+14,TIME ON MARKET (INSUFF/EXCESS),Other transfers,false
+16,BUILDING NOT YET ASSESSED,Other transfers,false
+19,INCLUDES PERSONAL PROPERTY,Other transfers,false
+2,CITY TREASURER SALE,Other transfers,false
+21,OTHER,Other transfers,false
+27,NO ASSESSED VALUATION,Other transfers,false
+28,OTHER,Other transfers,false
+29,OTHER,Other transfers,false
+3,LOVE AND AFFECTION SALE,Family transfers,false
+32,COURT ORDERED SALE,Other transfers,false
+33,SALE OF PREVIOUS FORECLOSURE - INVALID,Other transfers,false
+34,SHORT SALE - INVALID,Other transfers,false
+35,CORPORATION TRANSFER,Other transfers,false
+36,QUIT CLAIM,Other transfers,false
+37,ESTATE SALE,Other transfers,false
+4,OTHER,Other transfers,false
+5,OTHER,Other transfers,false
+50,OTHER,Other transfers,false
+6,CHANGED AFTER SALE,Other transfers,false
+8,OTHER,Other transfers,false
+9,OTHER INVALID SALES INDICATED,Other transfers,false
+99,CORRECTIVE DEED / DUPLICATE SALE,Other transfers,false
+AA,SALE NOT ANALYZED,Other transfers,false
+BK,BANK/FINANCIAL INSTITUTION,Other transfers,false
+DT,DATE OF TRANSFER (RECORD YR <> SALE YR),Other transfers,false
+GV,GOVERNMENT SALE,Other transfers,false
+H,MULTI-PARCEL SALE,Multi-parcel transfers,false
+N,NOT APPLICABLE,Other transfers,false
+ND,OTHER,Other transfers,false
+PA,PREFERENTIAL ASMT,Other transfers,false
+PV,CLEAN AND GREEN  VALID PREFERENTIAL,Other transfers,false
+PX,OTHER,Other transfers,false
+S,OTHER,Other transfers,false
+U,OTHER,Other transfers,false
+UR,OTHER,Other transfers,false
+UX,OTHER,Other transfers,false
+V,OTHER,Other transfers,false
+VB,OTHER,Other transfers,false
+VH,OTHER,Other transfers,false
+X,OTHER,Other transfers,false
+XX,OTHER,Other transfers,false
+YY,OTHER,Other transfers,false
+Z,OTHER,Other transfers,false

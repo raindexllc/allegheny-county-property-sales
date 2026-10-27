@@ -9,4 +9,6 @@ data/
 .streamlit/secrets.toml
 data-install.log
 Allegheny_County_Data_Pipeline_Exercise_Handoff.md
+.results-building-*/
+.results-backup-*/
 
