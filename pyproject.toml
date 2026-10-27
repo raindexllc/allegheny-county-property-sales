@@ -1,0 +1,9 @@
+[project]
+name = "allegheny-property-sales"
+version = "0.1.0"
+description = "A local WPRDC property sales reconciliation pipeline and Streamlit analysis"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

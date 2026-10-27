@@ -1,0 +1,473 @@
+{
+  "snapshot_fetched_at": "2026-10-27T15:02:25.006077+00:00",
+  "output_sha256": "86351460b912e56e1d2de7406f9fcc0641490ed7ab46001cdcdfa850e8707e55",
+  "totals": {
+    "transfers": 506471,
+    "municipalities": 130,
+    "eligible_market_sales": 100188,
+    "unresolved_conflicts": 5,
+    "incomplete_deed_keys": 600,
+    "recording_before_sale": 730,
+    "first_sale_date": "2012-01-01",
+    "last_sale_date": "2026-10-22"
+  },
+  "checks": [
+    {
+      "check_name": "annual_file_matches_sale_year",
+      "violations": 0
+    },
+    {
+      "check_name": "clean_transfer_identity_unique",
+      "violations": 0
+    },
+    {
+      "check_name": "consolidated_identity_unambiguous",
+      "violations": 0
+    },
+    {
+      "check_name": "every_source_identity_represented",
+      "violations": 0
+    },
+    {
+      "check_name": "identity_has_one_municipality",
+      "violations": 0
+    },
+    {
+      "check_name": "market_sale_definition",
+      "violations": 0
+    },
+    {
+      "check_name": "multi_parcel_excluded_from_market",
+      "violations": 0
+    },
+    {
+      "check_name": "municipality_code_has_one_name",
+      "violations": 0
+    },
+    {
+      "check_name": "nonnegative_prices",
+      "violations": 0
+    },
+    {
+      "check_name": "output_count_reconciliation",
+      "violations": 0
+    },
+    {
+      "check_name": "output_grain_unique",
+      "violations": 0
+    },
+    {
+      "check_name": "output_market_reconciliation",
+      "violations": 0
+    },
+    {
+      "check_name": "output_nonempty",
+      "violations": 0
+    },
+    {
+      "check_name": "required_identifiers",
+      "violations": 0
+    },
+    {
+      "check_name": "reviewed_sale_code_descriptions",
+      "violations": 0
+    },
+    {
+      "check_name": "sale_date_in_snapshot_range",
+      "violations": 0
+    },
+    {
+      "check_name": "typed_dates_and_price",
+      "violations": 0
+    },
+    {
+      "check_name": "unresolved_values_never_used",
+      "violations": 0
+    },
+    {
+      "check_name": "ward_labels_match_city_rollup",
+      "violations": 0
+    }
+  ],
+  "resources": [
+    {
+      "id": "5bbe6c55-bce6-4edb-9d04-68edeb6bf7b1",
+      "name": "Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/5bbe6c55-bce6-4edb-9d04-68edeb6bf7b1",
+      "year": null,
+      "kind": "consolidated",
+      "last_modified": "2026-10-26T07:08:43.900618",
+      "path": "raw/5bbe6c55-bce6-4edb-9d04-68edeb6bf7b1/6e2c2d9d0b39d8e58ec84453ab9ac278d42e8c3ee1c5bd219d862b55ce1b7245.csv",
+      "sha256": "6e2c2d9d0b39d8e58ec84453ab9ac278d42e8c3ee1c5bd219d862b55ce1b7245",
+      "bytes": 85920447,
+      "fetched_at": "2026-10-27T15:02:31.645356+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 397885
+    },
+    {
+      "id": "910b5e61-dee4-4a59-bee5-ad3660a8ab89",
+      "name": "2012 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/910b5e61-dee4-4a59-bee5-ad3660a8ab89",
+      "year": 2012,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:12:42.824834",
+      "path": "raw/910b5e61-dee4-4a59-bee5-ad3660a8ab89/406f01e0747fb43f002d9bf9e39a032383baa60d1f58202e3fcdb22f9fde5179.csv",
+      "sha256": "406f01e0747fb43f002d9bf9e39a032383baa60d1f58202e3fcdb22f9fde5179",
+      "bytes": 7147814,
+      "fetched_at": "2026-10-27T15:02:32.664336+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 33651
+    },
+    {
+      "id": "2915af73-a321-4cd0-afc0-908d3fb9fb59",
+      "name": "2013 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/2915af73-a321-4cd0-afc0-908d3fb9fb59",
+      "year": 2013,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:16:36.757530",
+      "path": "raw/2915af73-a321-4cd0-afc0-908d3fb9fb59/2add48288bb7cc4d8775bab304ab72be9efcef9691231af38afeda1b0dcac9b8.csv",
+      "sha256": "2add48288bb7cc4d8775bab304ab72be9efcef9691231af38afeda1b0dcac9b8",
+      "bytes": 7175774,
+      "fetched_at": "2026-10-27T15:02:34.184594+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 34095
+    },
+    {
+      "id": "69495c44-ea74-4f52-ad23-7282edb725e7",
+      "name": "2014 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/69495c44-ea74-4f52-ad23-7282edb725e7",
+      "year": 2014,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:22:03.833720",
+      "path": "raw/69495c44-ea74-4f52-ad23-7282edb725e7/8967b1ecab052af6b94fd970d5b7c49550355bcc7fb31bb804f7a14fc24e5a1b.csv",
+      "sha256": "8967b1ecab052af6b94fd970d5b7c49550355bcc7fb31bb804f7a14fc24e5a1b",
+      "bytes": 7191850,
+      "fetched_at": "2026-10-27T15:02:37.125023+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 33670
+    },
+    {
+      "id": "1eda5ff4-c442-49f2-b771-4f711346a6b9",
+      "name": "2015 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/1eda5ff4-c442-49f2-b771-4f711346a6b9",
+      "year": 2015,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:26:47.247719",
+      "path": "raw/1eda5ff4-c442-49f2-b771-4f711346a6b9/d5036705a8230e39771da491a1c323f10465a46cb9759b2d91d3fb570247bb8c.csv",
+      "sha256": "d5036705a8230e39771da491a1c323f10465a46cb9759b2d91d3fb570247bb8c",
+      "bytes": 7401561,
+      "fetched_at": "2026-10-27T15:02:42.527482+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 34686
+    },
+    {
+      "id": "aea14708-8c21-4292-a8d4-25a5a27dc0d3",
+      "name": "2016 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/aea14708-8c21-4292-a8d4-25a5a27dc0d3",
+      "year": 2016,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:31:37.374148",
+      "path": "raw/aea14708-8c21-4292-a8d4-25a5a27dc0d3/cacbeb5515e93f2af799ae858eed44cfe2e891afdbd367125221f18654a1da16.csv",
+      "sha256": "cacbeb5515e93f2af799ae858eed44cfe2e891afdbd367125221f18654a1da16",
+      "bytes": 7683193,
+      "fetched_at": "2026-10-27T15:02:43.758760+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 36011
+    },
+    {
+      "id": "abc4a494-4f6e-4b69-85d3-ff9756ec0c39",
+      "name": "2017 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/abc4a494-4f6e-4b69-85d3-ff9756ec0c39",
+      "year": 2017,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:36:22.620192",
+      "path": "raw/abc4a494-4f6e-4b69-85d3-ff9756ec0c39/552b978c10af724725b2985d6b5816e8f2c459ec4a0d397940c85c59e5756104.csv",
+      "sha256": "552b978c10af724725b2985d6b5816e8f2c459ec4a0d397940c85c59e5756104",
+      "bytes": 7534644,
+      "fetched_at": "2026-10-27T15:02:44.796187+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 35281
+    },
+    {
+      "id": "7211106c-62d2-4de9-a239-b045983a665e",
+      "name": "2018 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/7211106c-62d2-4de9-a239-b045983a665e",
+      "year": 2018,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:41:07.684705",
+      "path": "raw/7211106c-62d2-4de9-a239-b045983a665e/4958a2f094b042ef9c0250e793420ae0704219bc692b9f189bfc090db06e26a8.csv",
+      "sha256": "4958a2f094b042ef9c0250e793420ae0704219bc692b9f189bfc090db06e26a8",
+      "bytes": 7788432,
+      "fetched_at": "2026-10-27T15:02:46.010620+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 36488
+    },
+    {
+      "id": "bd9ae6de-09ed-47e5-8ebf-2a46a5a3a5b5",
+      "name": "2019 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/bd9ae6de-09ed-47e5-8ebf-2a46a5a3a5b5",
+      "year": 2019,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:46:23.949475",
+      "path": "raw/bd9ae6de-09ed-47e5-8ebf-2a46a5a3a5b5/5a000e555f08789a9197e554b343d4503ebd48ad01b244556772efeaaf46614c.csv",
+      "sha256": "5a000e555f08789a9197e554b343d4503ebd48ad01b244556772efeaaf46614c",
+      "bytes": 7656140,
+      "fetched_at": "2026-10-27T15:02:47.049363+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 35671
+    },
+    {
+      "id": "4531f69a-b368-4e46-8b93-a308faaab46b",
+      "name": "2020 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/4531f69a-b368-4e46-8b93-a308faaab46b",
+      "year": 2020,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:51:12.693024",
+      "path": "raw/4531f69a-b368-4e46-8b93-a308faaab46b/73aa239a8791fc6094a0b750173a5f433048c0df6e6e43a8118e759a7c26b709.csv",
+      "sha256": "73aa239a8791fc6094a0b750173a5f433048c0df6e6e43a8118e759a7c26b709",
+      "bytes": 7653252,
+      "fetched_at": "2026-10-27T15:02:48.397397+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 35348
+    },
+    {
+      "id": "a55a2710-4703-45b4-804e-5c550ca42fd7",
+      "name": "2021 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/a55a2710-4703-45b4-804e-5c550ca42fd7",
+      "year": 2021,
+      "kind": "annual",
+      "last_modified": "2026-10-26T07:56:41.944673",
+      "path": "raw/a55a2710-4703-45b4-804e-5c550ca42fd7/bb4a0b57463a7a65488afeb4f182448553a071b3a9d0f17a231f5fa059bd3ddf.csv",
+      "sha256": "bb4a0b57463a7a65488afeb4f182448553a071b3a9d0f17a231f5fa059bd3ddf",
+      "bytes": 8728745,
+      "fetched_at": "2026-10-27T15:02:49.676590+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 40234
+    },
+    {
+      "id": "4d9ab793-07d2-44e8-9530-e7258fd30018",
+      "name": "2022 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/4d9ab793-07d2-44e8-9530-e7258fd30018",
+      "year": 2022,
+      "kind": "annual",
+      "last_modified": "2026-10-26T08:02:24.533464",
+      "path": "raw/4d9ab793-07d2-44e8-9530-e7258fd30018/1306ac0757dd47fcb4c2784910e69223b75f973854775378a624243717979397.csv",
+      "sha256": "1306ac0757dd47fcb4c2784910e69223b75f973854775378a624243717979397",
+      "bytes": 7481554,
+      "fetched_at": "2026-10-27T15:02:50.683865+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 34826
+    },
+    {
+      "id": "9fbceb58-5bc1-4ad6-b93f-8147a9b34c5c",
+      "name": "2023 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/9fbceb58-5bc1-4ad6-b93f-8147a9b34c5c",
+      "year": 2023,
+      "kind": "annual",
+      "last_modified": "2026-10-26T08:06:36.892841",
+      "path": "raw/9fbceb58-5bc1-4ad6-b93f-8147a9b34c5c/df2f7ffca105a6ff4dc359653e37359f7ec39dbadfff7a81fe87c74d8f1895c8.csv",
+      "sha256": "df2f7ffca105a6ff4dc359653e37359f7ec39dbadfff7a81fe87c74d8f1895c8",
+      "bytes": 6606127,
+      "fetched_at": "2026-10-27T15:02:51.726074+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 30861
+    },
+    {
+      "id": "9366b400-e4a2-403f-ab14-64cf708ec2f7",
+      "name": "2024 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/9366b400-e4a2-403f-ab14-64cf708ec2f7",
+      "year": 2024,
+      "kind": "annual",
+      "last_modified": "2026-10-26T08:11:38.472108",
+      "path": "raw/9366b400-e4a2-403f-ab14-64cf708ec2f7/c598b874e3ad731062c32d66c46255fba2d62859b7303ed37f02e86ab94c8e6a.csv",
+      "sha256": "c598b874e3ad731062c32d66c46255fba2d62859b7303ed37f02e86ab94c8e6a",
+      "bytes": 6658773,
+      "fetched_at": "2026-10-27T15:02:52.816030+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 31115
+    },
+    {
+      "id": "57b84145-f9eb-493b-a78f-9bc803413d99",
+      "name": "2025 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/57b84145-f9eb-493b-a78f-9bc803413d99",
+      "year": 2025,
+      "kind": "annual",
+      "last_modified": "2026-10-26T08:18:03.019777",
+      "path": "raw/57b84145-f9eb-493b-a78f-9bc803413d99/a1522d630d92d92b6e436eb2ce27fb5e82e22325b88675048209715ce5cab47e.csv",
+      "sha256": "a1522d630d92d92b6e436eb2ce27fb5e82e22325b88675048209715ce5cab47e",
+      "bytes": 6769144,
+      "fetched_at": "2026-10-27T15:02:54.901405+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 31551
+    },
+    {
+      "id": "0bd13902-f2ee-4340-b7c8-c54ebd0f6bd0",
+      "name": "2026 Property Sales Transactions",
+      "url": "https://data.wprdc.org/datastore/dump/0bd13902-f2ee-4340-b7c8-c54ebd0f6bd0",
+      "year": 2026,
+      "kind": "annual",
+      "last_modified": "2026-10-26T08:21:15.954902",
+      "path": "raw/0bd13902-f2ee-4340-b7c8-c54ebd0f6bd0/40646daef08c864e7ea8b9d695bfa59abd5d0986b887a865a1f20ad95d61d658.csv",
+      "sha256": "40646daef08c864e7ea8b9d695bfa59abd5d0986b887a865a1f20ad95d61d658",
+      "bytes": 4915645,
+      "fetched_at": "2026-10-27T15:02:55.516385+00:00",
+      "http_etag": null,
+      "http_last_modified": null,
+      "row_count": 23066
+    }
+  ],
+  "reconciliation": [
+    {
+      "sale_year": 2012,
+      "reconciled_transfers": 33651,
+      "in_both": 33641,
+      "annual_only": 10,
+      "consolidated_only": 0,
+      "competing_versions": 0,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2013,
+      "reconciled_transfers": 34095,
+      "in_both": 34085,
+      "annual_only": 10,
+      "consolidated_only": 0,
+      "competing_versions": 0,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2014,
+      "reconciled_transfers": 33646,
+      "in_both": 33625,
+      "annual_only": 21,
+      "consolidated_only": 0,
+      "competing_versions": 24,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2015,
+      "reconciled_transfers": 34641,
+      "in_both": 34622,
+      "annual_only": 19,
+      "consolidated_only": 0,
+      "competing_versions": 45,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2016,
+      "reconciled_transfers": 36009,
+      "in_both": 35996,
+      "annual_only": 13,
+      "consolidated_only": 0,
+      "competing_versions": 2,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2017,
+      "reconciled_transfers": 35279,
+      "in_both": 35264,
+      "annual_only": 15,
+      "consolidated_only": 0,
+      "competing_versions": 2,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2018,
+      "reconciled_transfers": 36488,
+      "in_both": 36454,
+      "annual_only": 34,
+      "consolidated_only": 0,
+      "competing_versions": 0,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2019,
+      "reconciled_transfers": 35670,
+      "in_both": 35625,
+      "annual_only": 45,
+      "consolidated_only": 0,
+      "competing_versions": 1,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2020,
+      "reconciled_transfers": 35346,
+      "in_both": 35271,
+      "annual_only": 75,
+      "consolidated_only": 0,
+      "competing_versions": 2,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2021,
+      "reconciled_transfers": 40233,
+      "in_both": 40138,
+      "annual_only": 95,
+      "consolidated_only": 0,
+      "competing_versions": 1,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2022,
+      "reconciled_transfers": 34825,
+      "in_both": 33259,
+      "annual_only": 1566,
+      "consolidated_only": 0,
+      "competing_versions": 1,
+      "unresolved_conflicts": 1
+    },
+    {
+      "sale_year": 2023,
+      "reconciled_transfers": 30859,
+      "in_both": 4653,
+      "annual_only": 26206,
+      "consolidated_only": 0,
+      "competing_versions": 2,
+      "unresolved_conflicts": 1
+    },
+    {
+      "sale_year": 2024,
+      "reconciled_transfers": 31113,
+      "in_both": 4740,
+      "annual_only": 26373,
+      "consolidated_only": 0,
+      "competing_versions": 2,
+      "unresolved_conflicts": 2
+    },
+    {
+      "sale_year": 2025,
+      "reconciled_transfers": 31551,
+      "in_both": 509,
+      "annual_only": 31042,
+      "consolidated_only": 0,
+      "competing_versions": 0,
+      "unresolved_conflicts": 0
+    },
+    {
+      "sale_year": 2026,
+      "reconciled_transfers": 23065,
+      "in_both": 3,
+      "annual_only": 23062,
+      "consolidated_only": 0,
+      "competing_versions": 1,
+      "unresolved_conflicts": 1
+    }
+  ],
+  "definition": "Eligible: SALECODE='0', SALEDESC='VALID SALE', positive price, resolved identity.",
+  "minimum_market_sample": 30
+}

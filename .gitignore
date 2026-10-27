@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/
+*.duckdb
+*.duckdb.wal
+.DS_Store
+.streamlit/secrets.toml
+data-install.log
+Allegheny_County_Data_Pipeline_Exercise_Handoff.md
+
